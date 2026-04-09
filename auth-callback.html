@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signing in to Stackr...</title>
+  <style>
+    body { font-family: -apple-system, sans-serif; background: #08080f; color: #f9fafb; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; text-align: center; }
+    .container { padding: 32px; }
+    h1 { font-size: 24px; margin-bottom: 8px; }
+    p { color: #9ca3af; font-size: 15px; margin-bottom: 24px; }
+    .btn { display: inline-block; background: #7c3aed; color: #fff; padding: 14px 28px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 16px; }
+  </style>
+  <script>
+    // Grab the hash fragment from Supabase magic link and redirect to the app
+    const hash = window.location.hash;
+    if (hash) {
+      // Redirect to app with the auth tokens
+      window.location.href = 'stackr://auth-callback' + hash;
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Signed in!</h1>
+    <p>Redirecting you to Stackr...</p>
+    <a href="stackr://auth-callback" class="btn">Open Stackr</a>
+    <p style="margin-top: 24px; font-size: 13px; color: #6b7280;">If the app doesn't open automatically, tap the button above.</p>
+  </div>
+</body>
+</html>
